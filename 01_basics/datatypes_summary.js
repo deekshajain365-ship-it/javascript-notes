@@ -25,9 +25,6 @@ console.log( id === id2); //false
 const bigNum = 2334546665322267n
 
 
-
-
-
 // Reference (non primitive)
 // array , objects , functions 
 
@@ -66,3 +63,31 @@ console.log(typeof bigNum);  //bigint
        Object  =>  object
 
  */
+
+
+    // +++++++++++++ MEMORY +++++++++++++++++++++
+    
+    // stack (primitive) and heap ( non primitive)
+
+    let youtubeName = "code with bahubali";  // ==> stack
+
+    let anotherName = youtubeName;  // just copied
+
+    anotherName = "code on road ";   // that's why , it do not make ay change in anotherName 
+
+    console.log(youtubeName);
+    console.log(anotherName);
+    
+    let user1 = {                      // object ==> heap
+        email : "ironman@gmail.com" ,
+        upi : "strak@ybl"   
+    }
+    
+    let user2 = user1    // user2 got the reference of user1 data , and any change in user2 will reflect in user1 also
+
+    user2.email = "spiderman@gmail.com";
+
+    console.log( user1.email ); //spiderman@gmail.com
+    console.log( user2.email ); //spiderman@gmail.com
+    
+
