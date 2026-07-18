@@ -34,15 +34,15 @@ console.log(newarr);
 
 //SLICE AND SPLICE ------------------
 
-console.log("myarr before ", myarr);
+console.log("myarr before ", myarr); // [ 22, 34, 'string', true, 42 ]
 
 const myn1 = myarr.slice(1,3) // [1,3) , ending index is not included
- console.log(myn1);
-console.log("after slice myarr ",myarr);
+ console.log(myn1);           // [ 34, 'string' ]
+console.log("after slice myarr ",myarr);  //[ 22, 34, 'string', true, 42 ]
 
-const myn2 = myarr.splice(2,4) // [2,4] , ending index is included
-console.log(myn2);
-console.log("after splice myarr ",myarr); // [ 22, 34 ]
+const myn2 = myarr.splice(2,4) //  [2,4] , ending index is included
+console.log(myn2);                  //  ['string', true, 42 ]
+console.log("after splice myarr ",myarr); //  [ 22, 34 ]
 
 // in splice last index is included ,also it manipulate the og array
 
