@@ -33,7 +33,7 @@ console.log(Array.from({name : "deeksha", age :19})); // []
 
 const obj1 = {name : "deeksha", age :19}
 const arr5 = Object.keys(obj1);
-console.log(arr5);
+console.log(arr5);  //[ 'name', 'age' ]
 
 
 let score1=1000
