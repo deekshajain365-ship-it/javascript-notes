@@ -62,3 +62,33 @@ console.log(tinderuser2.hasOwnProperty('isloggedin')); // true
 
 
 
+// object de-structure
+
+const course = {
+    coursename : " javascript ",
+    courseprice : "9009",
+    courseinstructor : "Hitesh" 
+}
+
+// const {*what u want to extract* : *call it as*} = *name of object*
+
+const {courseinstructor : teacher } = course
+//console.log(courseinstructor);
+console.log(teacher);
+
+
+//json 
+// {
+//     "name" : "mahi",
+//    "age" :99 ,
+//    "location":"pluto"
+// }
+
+// use 'json formatter' website for better understanding 
+
+// we can also destructure array /array containing numerous objects
+[
+    {},
+    {},
+    {}
+]
