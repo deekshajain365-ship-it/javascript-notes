@@ -44,3 +44,41 @@ console.log(login()); // undefined ,just logged in , if if-statement was not wri
 
 
 
+// rest operator --------(have diiferent place of use than spread operator , notation is same) :
+
+/*
+function calculateCartPrice (...num1) {
+    return num1 ;
+}
+console.log(calculateCartPrice(200, 345,7000)); // [ 200, 345, 7000 ]
+*/
+
+function calculateCartPrice (val1,val2,...num1) {
+    return num1 ;
+}// val1 = 200 and val2 = 345
+console.log(calculateCartPrice(200, 345,7000 , 908 )); // [  7000, 908 ]
+
+const user = {
+    username : "harry potter ",
+    price : 934 
+}
+function handleObject (anyObject){
+    console.log(`username is ${anyObject.username} and price is ${anyObject.price} `);    
+}
+
+//handleObject(user);
+handleObject({
+     username : "harry potter ",
+    price : 934 
+})
+
+const myarray =[1,3,32,4,65]
+function returnsecondval( getarray){
+    return getarray[1] ;
+}
+//console.log(returnsecondval(myarray));
+
+console.log(returnsecondval([23,5,65,323,56]));
+
+
+
