@@ -3,7 +3,7 @@ const coding = [ "js", "cpp", "java", "python","rust"]
 coding.forEach( function (element){
     // console.log(element);
 })
-
+// forEach -> need callbackfunction (do not have any name)
 coding.forEach( (val)=> {
     console.log(val);
 })
