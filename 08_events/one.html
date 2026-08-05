@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2> amazing images </h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" 
+                src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" 
+                alt="photoshop"></li>  <!--onclick="alert('you clicked on the image')"  not a good method -->
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>  
+            
+        </ul>
+    </div>
+    
+</body>
+<script>
+    //--------- onclick method provide less features --------
+//  document.getElementById('photoshop').onclick = function(){
+//     alert('you clicked on the image')
+//  }
+
+    // ------ that's why use event listeners --------------
+    // document.getElementById('photoshop').addEventListener('click' ,function(){
+    //     alert('you clicked on the coder image')
+    // }, false) 
+    // third parameter is for event bubbling and capturing, by default it is false
+
+    // another method used earlier was , attachEvent() but it is deprecated now
+    // jquery uses on() method to attach event listeners
+    
+    //  event propagation:         false = Bubbling (bottom to top(parent tag))
+    //                             true = Capturing (top to bottom)
+    
+    //  document.getElementById('images').addEventListener('click' ,function(e){
+    //    console.log('you clicked on the image');
+    // },false )
+    //    document.getElementById('owl').addEventListener('click' ,function(e){
+    //     e.stopPropagation()// to stop event bubbling, so that parent element will not get the event
+    //    console.log('you clicked on the owl image');
+       
+    // },false )
+
+     // to study methods of event object, 
+     // type , timestamp, target, defaultPrevented
+     // toElement , srcElement , currentTarget
+     //clientX, clientY, pageX, pageY, screenX, screenY, 
+     // altkey, ctrlKey, shiftKey, keycode
+
+    //  document.getElementById('google').addEventListener('click' ,function(e){
+    //     e.preventDefault() // to prevent default action of the event
+    //     e.stopPropagation() 
+    //     console.log('you clicked on the google link');
+    //  })
+
+     document.querySelector('#images').addEventListener('click', function(e){
+        if(e.target.tagName === 'IMG'){ // to check if the clicked element is an image or not
+                                        // if we do not use if{} ,clicking on ul, will remove whole ul
+            console.log( e.target.tagName);
+            let removeIt = e.target.parentNode // to get the parent node of the clicked image, which is li
+            removeIt.remove() // to remove the image from the DOM
+        }
+     })
+</script>
+</html>
